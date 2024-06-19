@@ -13,17 +13,18 @@ public class BaseBarrier : MonoBehaviour
         string ObjectName = gameObject.name;
         if (!PostStart())
         {
-            
+
             Debug.LogError($"Failed initializing in {ObjectName}");
         }
         //処理
 
+        //
         if (!PostStart())
         {
             Debug.LogError($"Failed initializing in {ObjectName}");
         }
     }
-    virtual protected bool PreStart()//子クラス独自の処理を書く エラーが発生する場合falseを返す
+    virtual protected bool PreStart()//子クラス独自の処理を書く エラーが発生した場合falseを返す
     {
         return true;
     }
@@ -39,16 +40,17 @@ public class BaseBarrier : MonoBehaviour
         if (!PostStart())
         {
 
-            Debug.LogError($"Failed Lodding in {ObjectName}");
+            Debug.LogError($"Failed Loading in {ObjectName}");
         }
         //処理
 
+        //
         if (!PostStart())
         {
-            Debug.LogError($"Failed Lodding in {ObjectName}");
+            Debug.LogError($"Failed Loading in {ObjectName}");
         }
     }
-    virtual protected bool PreTick()//子クラス独自の処理を書く エラーが発生する場合falseを返す
+    virtual protected bool PreTick()//子クラス独自の処理を書く エラーが発生した場合falseを返す
     {
         return true;
     }

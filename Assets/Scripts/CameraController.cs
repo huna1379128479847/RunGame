@@ -7,30 +7,24 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     private Vector2 defaltTargetPos;
+    private Vector2 defaltPos;
     [SerializeField] private float deltaX;
 
     private void Start()
     {
         defaltTargetPos = target.transform.position;
+        defaltPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.parent == null)
+        Vector2 vector2 = target.transform.position;
+        if (defaltPos.x < vector2.x)
         {
-            Vector2 vector2 = target.transform.position;
-            if (System.Math.Abs(defaltTargetPos.x - vector2.x) > deltaX)
-            {
-                transform.parent = target.transform;
-            }
-        }
-        if (transform.parent != null)
-        {
-            Quaternion quaternion = target.transform.rotation;
-            float x = quaternion.x;
-            float y = quaternion.y;
-            transform.rotation = Quaternion.Euler(-x, -y, 0);
+            transform.position = target.transform.position;
+            Vector2 vec = transform.position;
+            transform.position = new Vector3(vec.x, defaltPos.y, -10);
         }
     }
 }
