@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chick : MonoBehaviour
+public class Chick : BaseBarrier
 {
-    [SerializeField] private string checkTag;
-    [SerializeField] private GameObject bird;
-    private void OnCollisionEnter2D(Collision2D collision)
+    override protected void GameOver()
     {
-        if (collision.gameObject.tag == checkTag)
-        {
-            bird.GetComponent<PlayerController>().Notify_Gameover();
-            Debug.Log("ひよこちゃんを助けたよ！ゲームクリアー！");
-        }
+        bird.GetComponent<PlayerController>().Notify_Gameover();
+        Debug.Log("ひよこちゃんを助けたよ！ゲームクリアー！");
     }
 }

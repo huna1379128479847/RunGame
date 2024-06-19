@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BaseBarrier : MonoBehaviour
 {
-    [SerializeField] private string checkTag;
-    [SerializeField] private GameObject bird;
+    [SerializeField] protected string checkTag;
+    [SerializeField] protected GameObject bird;
 
     protected void Start()
     {
@@ -61,8 +61,13 @@ public class BaseBarrier : MonoBehaviour
     {
         if (collision.gameObject.tag == checkTag)
         {
-            bird.GetComponent<PlayerController>().Notify_Gameover();
-            Debug.Log("石にぶつかったよ！ゲームオーバー！");
+            GameOver();
         }
+    }
+
+    virtual protected void GameOver()
+    {
+        bird.GetComponent<PlayerController>().Notify_Gameover();
+        Debug.Log("石にぶつかったよ！ゲームオーバー！");
     }
 }
