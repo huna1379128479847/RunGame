@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Stone : BaseBarrier
 {
-    protected override bool PostStart()
+    override protected bool PostStart()
     {
         return base.PostStart();
+    }
+
+    protected override void GameOver()
+    {
+        Debug.Log("石にぶつかったよ！ゲームオーバー！");
+        base.GameOver();
     }
 }

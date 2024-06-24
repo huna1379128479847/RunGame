@@ -37,11 +37,11 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate ‚ÍŒÅ’èŠÔ‚²‚Æ‚ÉŒÄ‚Ño‚³‚ê‚é
     private void FixedUpdate()
     {
-        /*if (!gameover)
+        if (!gameover)
         {
             rbody.velocity = new Vector2(speed, rbody.velocity.y);
             text.SetText($"Now Y Pow:{rbody.velocity.y}");
-        }*/
+        }
     }
 
     public void Notify_Gameover()
