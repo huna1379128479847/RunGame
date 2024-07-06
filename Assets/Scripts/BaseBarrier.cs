@@ -6,7 +6,10 @@ using UnityEngine;
 public class BaseBarrier : MonoBehaviour
 {
     [SerializeField] protected string checkTag;
-    [SerializeField] protected GameObject bird;
+    [SerializeField] protected GameObject player;
+    bool isGameover = false;
+    int count = 5;
+    float time;
 
     protected void Start()
     {
@@ -37,7 +40,7 @@ public class BaseBarrier : MonoBehaviour
     virtual protected void Update()
     {
         string ObjectName = gameObject.name;
-        if (!PostStart())
+        if (!PreTick())
         {
 
             Debug.LogError($"Failed Loading in {ObjectName}");
@@ -45,7 +48,7 @@ public class BaseBarrier : MonoBehaviour
         //処理
 
         //
-        if (!PostStart())
+        if (!PostTick())
         {
             Debug.LogError($"Failed Loading in {ObjectName}");
         }
@@ -56,6 +59,21 @@ public class BaseBarrier : MonoBehaviour
     }
     virtual protected bool PostTick()
     {
+        if (isGameover && count >= 0)
+        {
+            if (time >= 1)
+            {
+                time = 0;
+                Debug.Log($"メニューに戻るまで:{count}");
+                count--;
+            }
+            if (count == 0)
+            {
+                count = -1;
+                SceneChanger.instance.LoadLevel("Menu");
+            }
+        }
+        time += Time.deltaTime;
         return true;
     }
 
@@ -69,7 +87,7 @@ public class BaseBarrier : MonoBehaviour
 
     virtual protected void GameOver()
     {
-        bird.GetComponent<PlayerController>().Notify_Gameover();
-        Debug.Log("石にぶつかったよ！ゲームオーバー！");
+        player.GetComponent<PlayerController>().Notify_Gameover();
+        isGameover = true;
     }
 }

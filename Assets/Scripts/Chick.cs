@@ -6,7 +6,7 @@ public class Chick : BaseBarrier
 {
     override protected void GameOver()
     {
-        bird.GetComponent<PlayerController>().Notify_Gameover();
         Debug.Log("ひよこちゃんを助けたよ！ゲームクリアー！");
+        base.GameOver();
     }
 }

@@ -8,10 +8,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpPow = 300f;
-    private bool onFloor = true;
+    [SerializeField]private bool onFloor = true;
     private bool gameover = false;
     [SerializeField] private Rigidbody2D rbody;
-    [SerializeField] private GameObject floor;
     [SerializeField] private TMP_Text text;
 
     // Update is called once per frame
@@ -29,19 +28,19 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collisionGameObject = collision.gameObject;
-        if (collisionGameObject == floor && !onFloor)
+        if (collisionGameObject.tag == "floor")
         {
             onFloor = true;
         }
     }
-    // FixedUpdate ‚ÍŒÅ’èŠÔ‚²‚Æ‚ÉŒÄ‚Ño‚³‚ê‚é
+    // FixedUpdate ï¿½ÍŒÅ’èï¿½Ô‚ï¿½ï¿½Æ‚ÉŒÄ‚Ñoï¿½ï¿½ï¿½ï¿½ï¿½
     private void FixedUpdate()
     {
-        /*if (!gameover)
+        if (!gameover)
         {
             rbody.velocity = new Vector2(speed, rbody.velocity.y);
-            text.SetText($"Now Y Pow:{rbody.velocity.y}");
-        }*/
+            //text.SetText($"Now Y Pow:{rbody.velocity.y}");
+        }
     }
 
     public void Notify_Gameover()
