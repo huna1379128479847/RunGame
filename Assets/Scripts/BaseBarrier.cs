@@ -61,13 +61,13 @@ public class BaseBarrier : MonoBehaviour
     {
         if (isGameover && count >= 0)
         {
-            if (time >= 1)
+            if (time >= 0)
             {
                 time = 0;
                 Debug.Log($"メニューに戻るまで:{count}");
                 count--;
             }
-            if (count == 0)
+            if (count < 0)
             {
                 count = -1;
                 SceneChanger.instance.LoadLevel("Menu");

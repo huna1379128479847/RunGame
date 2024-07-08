@@ -222,4 +222,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkTag: Player
-  player: {fileID: 0}
+  player: {fileID: 4377789395626826666, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
