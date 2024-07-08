@@ -6,13 +6,11 @@ using UnityEngine.UIElements;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject target;
-    private Vector2 defaltTargetPos;
     private Vector2 defaltPos;
     [SerializeField] private float deltaX;
 
     private void Start()
     {
-        defaltTargetPos = target.transform.position;
         defaltPos = transform.position;
     }
 
