@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : SingletonBehavior<SceneChanger>
 {
+    public GameObject player;
     // Start is called before the first frame update
     override protected void Awake()
     {

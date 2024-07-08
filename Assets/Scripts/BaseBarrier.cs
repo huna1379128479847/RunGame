@@ -61,7 +61,7 @@ public class BaseBarrier : MonoBehaviour
     {
         if (isGameover && count >= 0)
         {
-            if (time >= 0)
+            if (time >= 1)
             {
                 time = 0;
                 Debug.Log($"メニューに戻るまで:{count}");
