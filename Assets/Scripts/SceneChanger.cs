@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : SingletonBehavior<SceneChanger>
 {
+    public GameObject player;
     // Start is called before the first frame update
     override protected void Awake()
     {
@@ -14,7 +15,7 @@ public class SceneChanger : SingletonBehavior<SceneChanger>
         DontDestroyOnLoad(this);
     }
 
-    // 使用するときは「SceneChanger.instance.LoadLevel(移動したいシーンの名前)」で呼び出すこと
+    // If you want call to this method, you should write to:"SceneChanger.instance.LoadLevel("SceneName")".
     public void LoadLevel(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
