@@ -6,6 +6,7 @@ public class Enemy2 : BaseBarrier
 {
    [SerializeField] float jump;
    [SerializeField] float speed;
+   [SerializeField] float maxJumpHeight = 5f; // 最大ジャンプ高度
     bool onFloor;
     float time;
     Rigidbody2D rb;
@@ -17,7 +18,7 @@ public class Enemy2 : BaseBarrier
     protected override bool PostTick()
     {
         if(onFloor){
-            rb.AddForce(transform.up * jump);
+            rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse); // ジャンプ時にインパルスを使用
             onFloor = false;
             time = 4;
         }else{
@@ -26,7 +27,7 @@ public class Enemy2 : BaseBarrier
         if (time < 0){
             onFloor = true;
         }
-        rb.AddForce(new Vector2(speed*Time.deltaTime,0f));
+        rb.velocity  = new Vector2(speed, Mathf.Clamp(rb.velocity.y, -maxJumpHeight, maxJumpHeight)); // ジャンプの高度を制限
         return base.PostTick();
     }
 }
