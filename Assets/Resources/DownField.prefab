@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 8
   direction: {x: 0, y: -1}
+  isJumpBoost: 1
