@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class BaseBarrier : MonoBehaviour
 {
-    [SerializeField] protected string checkTag;
-    [SerializeField] protected GameObject player;
+    protected GameObject player;
     bool isGameover = false;
     int count = 5;
     float time;
 
     protected void Start()
     {
+        player = SceneChanger.instance.player;
         string ObjectName = gameObject.name;
         if (!PostStart())
         {
@@ -79,12 +80,19 @@ public class BaseBarrier : MonoBehaviour
 
     virtual protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == checkTag)
+        if (collision.gameObject == player)
         {
             GameOver();
         }
     }
 
+    virtual protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject == player)
+        {
+            GameOver();
+        }
+    }
     virtual protected void GameOver()
     {
         player.GetComponent<PlayerController>().Notify_Gameover();
