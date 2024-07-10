@@ -552,6 +552,7 @@ MonoBehaviour:
   fadeInDuration: 3
   waitTimeBeforeSceneChange: 3
   nextSceneName: Menu
+  moveDistance: 10
 --- !u!4 &1749550096
 Transform:
   m_ObjectHideFlags: 0
