@@ -121,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00013053417, y: -0.074970424}
   serializedVersion: 2
-  m_Radius: 0.74628055
+  m_Radius: 10
 --- !u!114 &5193959107385445781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68dbfb2d1984bc409cd38a93b059a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkTag: Player
-  player: {fileID: 4377789395626826666, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
 --- !u!95 &4793886148000624505
 Animator:
   serializedVersion: 5
