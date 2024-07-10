@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 477c6fd62a836764ea40c08b00571c8c
+  - enabled: 1
+    path: Assets/Scenes/Dounyu.unity
+    guid: c0ec871e6b80dcc40a598019a0093313
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: dc5722fec5d17b748a23ecdf2e8144f2
   - enabled: 1
     path: Assets/Scenes/GameStage1.unity
     guid: 9987d48d6189cee4dbcedce155298859
+  - enabled: 1
+    path: Assets/Scenes/GameStage2.unity
+    guid: 386442a3c1ab2cd47bfb0e2e487cdc2b
   - enabled: 1
     path: Assets/Scenes/GameStage3.unity
     guid: 01c5e8c11343af24aa642c121b55d1e7
