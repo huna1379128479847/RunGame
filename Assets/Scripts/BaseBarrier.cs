@@ -67,7 +67,7 @@ public class BaseBarrier : MonoBehaviour
                 Debug.Log($"メニューに戻るまで:{count}");
                 count--;
             }
-            if (count == 0)
+            if (count < 0)
             {
                 count = -1;
                 SceneChanger.instance.LoadLevel("Menu");
