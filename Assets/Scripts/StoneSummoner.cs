@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class StoneSummoner : MonoBehaviour
 {
+    [SerializeField] GameObject stone;
+    string playerTag = "Player";
     // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.tag == playerTag)
+        {
+            stone.SetActive(true);
+        }
     }
 }
