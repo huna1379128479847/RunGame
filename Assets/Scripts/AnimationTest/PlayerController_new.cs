@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController_new : PlayerController
 {
+    [SerializeField] AudioClip SE_jump; // インスペクターから設定
+    AudioSource audioSource;
     private Animator animator;
     // アニメーションの設定
     // SetBool"isWalk"    = 歩くアニメーション
@@ -16,6 +18,7 @@ public class PlayerController_new : PlayerController
     {
         base.Start();
         animator = GetComponent<Animator>();
+        this.audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -23,7 +26,7 @@ public class PlayerController_new : PlayerController
         this.animator.SetBool("isWalk", true);
         if (Input.GetKeyDown(KeyCode.Space) && onFloor && !gameover)
         {
-
+            audioSource.PlayOneShot(SE_jump);
             rbody.AddForce(transform.up * jumpPow);
             onFloor = false;
         }
@@ -49,7 +52,7 @@ public class PlayerController_new : PlayerController
             this.animator.SetBool("isFalling", false);
             this.animator.SetBool("isWalk", true);
         }
-        if (this.rbody.velocity.y == 0) // プレイヤーが下降しているとき
+        if (this.rbody.velocity.y == 0) // プレイヤーが着地したとき
         {
             StartCoroutine(Landing());
         }
@@ -66,3 +69,4 @@ public class PlayerController_new : PlayerController
         this.animator.SetBool("isWalk", true);
     }
 }
+
