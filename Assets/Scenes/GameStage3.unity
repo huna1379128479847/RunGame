@@ -543,6 +543,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4377789395626826666, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
   m_PrefabInstance: {fileID: 1467465619}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &954310698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954310697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a22c3e74fd937e4c8c5c2bc638a209d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flySpeed: 10
 --- !u!1 &1067538962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8275131189986808127, guid: a9d430855abd642488b22c0b4f9bffe0, type: 3}
@@ -835,6 +848,10 @@ PrefabInstance:
       propertyPath: jumpPow
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 1682682893813487314, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2031938505531838509, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.86
@@ -882,7 +899,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4377789395626826666, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 954310698}
   m_SourcePrefab: {fileID: 100100000, guid: 870ea782a5caa92438511ea533ec45cf, type: 3}
 --- !u!1001 &1596482100
 PrefabInstance:
@@ -952,6 +972,10 @@ PrefabInstance:
     - target: {fileID: 2964728903971986056, guid: 26a48be55a52a6c40824ad56f3cab3d5, type: 3}
       propertyPath: m_Name
       value: enemy3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964728903971986056, guid: 26a48be55a52a6c40824ad56f3cab3d5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 9222619556901727398, guid: 26a48be55a52a6c40824ad56f3cab3d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1139,6 +1163,10 @@ PrefabInstance:
     - target: {fileID: 2964728903971986056, guid: fba10f57ba204ad4d986af526e7dd40b, type: 3}
       propertyPath: m_Name
       value: enemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964728903971986056, guid: fba10f57ba204ad4d986af526e7dd40b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 9222619556901727398, guid: fba10f57ba204ad4d986af526e7dd40b, type: 3}
       propertyPath: m_LocalPosition.x
