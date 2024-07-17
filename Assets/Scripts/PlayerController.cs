@@ -9,12 +9,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpPow = 300f;
-    [SerializeField]private bool onFloor = true;
-    private bool gameover = false;
-    [SerializeField] private Rigidbody2D rbody;
-    [SerializeField] private TMP_Text text;
+    [SerializeField] protected bool onFloor = true;
+    protected bool gameover = false;
+    protected Rigidbody2D rbody;
 
-    void Start(){
+    virtual protected void Start()
+    {
+        rbody = GetComponent<Rigidbody2D>();
         SceneChanger.instance.player = gameObject;
     }
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
             rbody.AddForce(transform.up * jumpPow);
             onFloor = false;
         }
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,7 +44,6 @@ public class PlayerController : MonoBehaviour
         if (!gameover)
         {
             rbody.velocity = new Vector2(speed, rbody.velocity.y);
-            //text.SetText($"Now Y Pow:{rbody.velocity.y}");
         }
     }
 
