@@ -60,7 +60,7 @@ public class PlayerController_new : PlayerController
 
 
 
-    IEnumerator Landing()
+    IEnumerator Landing() // 一瞬だけ着地アニメーションをする
     {
         this.animator.SetBool("isLanding", true);
         this.animator.SetBool("inWalk", false);

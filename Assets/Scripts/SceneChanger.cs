@@ -7,17 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : SingletonBehavior<SceneChanger>
 {
-    public GameObject player;
-    // Start is called before the first frame update
-    override protected void Awake()
+    public GameObject player; // プレイヤーのGameObjectを保持する変数
+
+    override protected void Awake() // Awakeはオブジェクトが有効化されたときに一度だけ実行される
     {
-        base.Awake();
-        DontDestroyOnLoad(this);
+        base.Awake(); // 親クラスのAwakeメソッドを呼び出す
+        DontDestroyOnLoad(this); // シーンが変更されても、このオブジェクトを破棄しない
     }
 
-    // If you want call to this method, you should write to:"SceneChanger.instance.LoadLevel("SceneName")".
+    // このメソッドを呼び出してシーンを変更します。呼び出し方例: "SceneChanger.instance.LoadLevel("SceneName")"
     public void LoadLevel(string sceneName)
     {
+        // 指定されたシーンを読み込む
         SceneManager.LoadScene(sceneName);
     }
 }

@@ -9,12 +9,14 @@ public class TitleButton : MonoBehaviour
     
     void Start()
     {
+        // ゲームオブジェクトにアタッチされているButtonコンポーネントを取得し、
+        // そのボタンがクリックされたときにClearGameメソッドを呼び出すリスナーを追加
         gameObject.GetComponent<Button>().onClick.AddListener(ClearGame);
     }
 
 
-    void ClearGame()
+    void ClearGame() // ボタンがクリックされたときに呼び出されるメソッド
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu"); // シーンを"Menu"シーンに切り替える
     }
 }

@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GoalController : MonoBehaviour
 {
-   private void OnCollisionEnter2D(Collision2D collision)
-   {
-    if(collision.gameObject.CompareTag("Player"))
+    // 2Dのコライダーが衝突したときに呼び出されるメソッド
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("Clear");
+        // 衝突したオブジェクトがタグ "Player" を持っているかどうかをチェック
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // "Player" と衝突した場合、"Clear" シーンに遷移する
+            SceneManager.LoadScene("Clear");
+        }
     }
-   }
 }
