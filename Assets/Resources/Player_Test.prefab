@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flySpeed: 5
   spin: -6
+  SE_damege: {fileID: 8300000, guid: b4e760ed5c5ca1c4dbf80d30b1e4a096, type: 3}
 --- !u!50 &8426363915730806632
 Rigidbody2D:
   serializedVersion: 4

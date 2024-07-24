@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Fall : BaseBarrier // BaseBarrierクラスを継承
 {
+    [SerializeField] AudioClip SE_damege; // インスペクターからSEを設定
+    AudioSource audioSource;
+    
     // BaseBarrierクラスのGameOverメソッドをオーバーライド
     protected override void GameOver()
     {
