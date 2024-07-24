@@ -560,6 +560,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8177267416708659857, guid: cf19b4a928b3f3547babf9cd365d9824, type: 3}
+      propertyPath: spin
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954934306290534324, guid: cf19b4a928b3f3547babf9cd365d9824, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

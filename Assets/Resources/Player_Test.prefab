@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2418647770315367608}
   - component: {fileID: 3825108741846899932}
   - component: {fileID: 5668748538484213835}
+  - component: {fileID: 8177267416708659857}
   - component: {fileID: 8426363915730806632}
   - component: {fileID: 4356581605107115958}
   - component: {fileID: 5243526734278850335}
@@ -106,6 +107,20 @@ MonoBehaviour:
   jumpPow: 300
   onFloor: 1
   SE_jump: {fileID: 8300000, guid: bcd18ab51b67f6648aca1260290b4a0d, type: 3}
+--- !u!114 &8177267416708659857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90852656096426253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a22c3e74fd937e4c8c5c2bc638a209d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flySpeed: 5
+  spin: -6
 --- !u!50 &8426363915730806632
 Rigidbody2D:
   serializedVersion: 4
