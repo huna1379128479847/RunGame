@@ -1014,7 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2608e3be94da9754899e9f2896444205, type: 3}
     - target: {fileID: 8275131189986808127, guid: a9d430855abd642488b22c0b4f9bffe0, type: 3}
       propertyPath: m_Name
-      value: Chick
+      value: GOAL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1162,7 +1162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c32d6506882ef3d40b6cd29226eb3346, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3578,6 +3578,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1457689338}
   - {fileID: 1958748820}
+  - {fileID: 2083234457}
+  - {fileID: 1725370735}
+  - {fileID: 659925131}
   - {fileID: 216707154}
   - {fileID: 1786251922}
   - {fileID: 1676200682}
@@ -3618,9 +3621,6 @@ SceneRoots:
   - {fileID: 1541209006}
   - {fileID: 833414675}
   - {fileID: 1485633175}
-  - {fileID: 2083234457}
-  - {fileID: 1725370735}
-  - {fileID: 659925131}
   - {fileID: 37541587}
   - {fileID: 1190964021}
   - {fileID: 951167733}
