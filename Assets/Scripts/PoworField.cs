@@ -24,23 +24,27 @@ public class PoworField : MonoBehaviour
         if (isJumpBoost)
         {
             nowPower = player.GetComponent<PlayerController>().jumpPow; // 現在のジャンプ力を取得
-            power += nowPower; // 力の強さに現在のジャンプ力を加算
+
         }
     }
 
-    // プレイヤーがトリガーに留まっているときに呼び出されるメソッド
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         // ジャンプブーストの場合
         if (isJumpBoost)
         {
             // プレイヤーのジャンプ力を設定
-            player.GetComponent<PlayerController>().jumpPow = power;
+            player.GetComponent<PlayerController>().jumpPow += power;
             return;
         }
+    }
+    // プレイヤーがトリガーに留まっているときに呼び出されるメソッド
+    private void OnTriggerStay2D(Collider2D other)
+    {
+
 
         // プレイヤーがトリガー内にいるとき
-        if (other.gameObject == player && MathF.Abs(nowPower) < MathF.Abs(power))
+        if (!isJumpBoost && other.gameObject == player && MathF.Abs(nowPower) < MathF.Abs(power))
         {
             // 現在の力の強さを増加させる
             nowPower += power / 60;
@@ -61,7 +65,7 @@ public class PoworField : MonoBehaviour
         }
 
         // プレイヤーがトリガーから出たとき
-        if (collision.gameObject == player)
+        if (!isJumpBoost && collision.gameObject == player)
         {
             // 現在の力の強さをリセット
             nowPower = 0;
