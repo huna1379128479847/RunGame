@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 public class MoveStone : Stone // Stoneクラスを継承
 {
