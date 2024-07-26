@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;     // プレイヤーの移動速度
     public float jumpPow = 300f; // ジャンプの力
     [SerializeField] protected bool onFloor = true; // プレイヤーが地面にいるかどうかのフラグ
+    [SerializeField] protected bool isLand = false;
     protected bool gameover = false; // ゲームオーバー状態を示すフラグ
     protected Rigidbody2D rbody; // プレイヤーのRigidbody2Dコンポーネント
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         if (collisionGameObject.tag == "floor") // 衝突したオブジェクトのタグが "floor" の場合
         {
             onFloor = true; // プレイヤーが地面にいると設定
+            isLand = true;
         }
     }
 

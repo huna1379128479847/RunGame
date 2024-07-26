@@ -7,6 +7,8 @@ public class PlayerController_new : PlayerController
     [SerializeField] AudioClip SE_jump; // インスペクターから設定
     AudioSource audioSource; // オーディオソースコンポーネント
     private Animator animator; // アニメーターコンポーネント
+
+    
     // アニメーションの設定
     // SetBool"isWalk"    = 歩くアニメーション
     // SetBool"isJump"    = ジャンプアニメーション
@@ -62,7 +64,7 @@ public class PlayerController_new : PlayerController
         }
 
         // 着地アニメーションの設定
-        if (this.rbody.velocity.y == 0) // プレイヤーが着地したとき
+        if (onFloor == true && isLand == true) // プレイヤーが着地したとき
         {
             StartCoroutine(Landing()); // 一瞬だけ着地アニメーションを再生
         }
@@ -77,6 +79,7 @@ public class PlayerController_new : PlayerController
         yield return new WaitForSeconds(0.1f); // 0.1秒待機
         this.animator.SetBool("isLanding", false);
         this.animator.SetBool("isWalk", true);
+        isLand = false;
     }
 }
 

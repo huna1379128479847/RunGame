@@ -13,6 +13,7 @@ public class BaseBarrier : MonoBehaviour
 
     protected void Start()
     {
+        isGameover = false; // ゲームオーバーの状態を初期化 
         player = SceneChanger.instance.player; // シーンチェンジャーからプレイヤーオブジェクトを取得
         string ObjectName = gameObject.name;   // オブジェクト名を取得
         if (!PostStart())
