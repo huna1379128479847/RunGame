@@ -12,7 +12,6 @@ public class SceneChanger : SingletonBehavior<SceneChanger>
     override protected void Awake() // Awakeはオブジェクトが有効化されたときに一度だけ実行される
     {
         base.Awake(); // 親クラスのAwakeメソッドを呼び出す
-        DontDestroyOnLoad(this); // シーンが変更されても、このオブジェクトを破棄しない
     }
 
     // このメソッドを呼び出してシーンを変更します。呼び出し方例: "SceneChanger.instance.LoadLevel("SceneName")"
